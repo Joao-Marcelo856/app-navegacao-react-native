@@ -1,45 +1,61 @@
 import { useRouter } from "expo-router";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View, ScrollView } from 'react-native';
 
 export default function Detalhes() {
     const router = useRouter();
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Tela de Detalhes</Text>
-            <Image style={styles.image} source={{ uri: "https://reactnative.dev/img/tiny_logo.png" }} />
-            <Text style={styles.description}>Aqui você pode adicionar mais informações.</Text>
-            <TouchableOpacity style={styles.button} onPress={() => router.back()}>
-                <Text style={styles.buttonText}>
-                    Voltar
-                </Text>
-            </TouchableOpacity>
-        </View>
+        <ScrollView style={styles.scrollContainer}>
+            <View style={styles.container}>
+                <Text style={styles.title}>Tela de Detalhes</Text>
+                <View style={styles.imagesGrid}>
+                    <Image style={styles.image} source={{ uri: "https://reactnative.dev/img/tiny_logo.png" }} />
+                    <Image style={styles.image} source={{ uri: "https://reactnative.dev/img/tiny_logo.png" }} />
+                    <Image style={styles.image} source={{ uri: "https://reactnative.dev/img/tiny_logo.png" }} />
+                </View>
+                <Text style={styles.description}>Aqui você pode adicionar mais informações.</Text>
+                <TouchableOpacity style={styles.button} onPress={() => router.back()}>
+                    <Text style={styles.buttonText}>
+                        Voltar
+                    </Text>
+                </TouchableOpacity>
+            </View>
+        </ScrollView>
     );
 }
 
-
 const styles = StyleSheet.create({
+    scrollContainer: {
+        backgroundColor: '#919191ff',
+    },
     container: {
         flex: 1,
         justifyContent: "center",
         alignItems: 'center',
         padding: 16,
-        backgroundColor: '#f4ff22',
+        backgroundColor: '#919191ff',
+    },
+    imagesGrid: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        width: '100%',
+        marginBottom: 24,
     },
     title: {
         fontSize: 24,
         fontWeight: 700,
-        color: "#333",
+        color: "#c7c7c7ff",
         marginBottom: 16,
     },
     subtitle: {
         fontSize: 18,
         fontWeight: 500,
-        color: '#555',
+        color: '#202020ff',
         marginBottom: 28,
     },
     button: {
-        backgroundColor: '#ec7000',
+        backgroundColor: '#4a4138ff',
         paddingVertical: 16,
         paddingHorizontal: 50,
         borderRadius: 12,
@@ -50,9 +66,11 @@ const styles = StyleSheet.create({
         fontWeight: 600,
     },
     image: {
-        width: 150,
-        height: 150,
-        marginBottom: 20,
+        width: 120,
+        height: 120,
+        marginBottom: 16,
+        marginHorizontal: 8,
+        borderRadius: 8,
     },
     description: {
         fontSize: 16,
@@ -61,3 +79,4 @@ const styles = StyleSheet.create({
         marginBottom: 30,
     },
 })
+

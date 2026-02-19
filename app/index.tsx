@@ -11,7 +11,7 @@ export default function Home() {
                 onPress={() => router.push('/detalhes')}>
                 <Text style={styles.buttonText}>Ir para detalhes</Text>
             </TouchableOpacity>
-            
+
             <TouchableOpacity style={styles.button}
                 onPress={() => router.push('/sobre')}>
                 <Text style={styles.buttonText}>Ir para sobre</Text>
@@ -26,22 +26,22 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: 'center',
         padding: 16,
-        backgroundColor: '#f4ff22',
+        backgroundColor: '#919191ff',
     },
     title: {
         fontSize: 24,
         fontWeight: 700,
-        color: "#333",
+        color: "#c7c7c7ff",
         marginBottom: 16,
     },
     subtitle: {
         fontSize: 18,
         fontWeight: 500,
-        color: '#555',
+        color: '#202020ff',
         marginBottom: 28,
     },
     button: {
-        backgroundColor: '#ec7000',
+        backgroundColor: '#4a4138ff',
         paddingVertical: 16,
         paddingHorizontal: 50,
         borderRadius: 12,
