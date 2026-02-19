@@ -1,8 +1,17 @@
 import { useRouter } from "expo-router";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
+import Button from "@/components/Button";
+import Card from "@/components/Card";
+
 export default function Home() {
     const router = useRouter();
+
+    const handlePress = () => {
+        console.log("Botão clicado!");
+
+    };
+
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Bem vindo ao React Native!</Text>
@@ -16,6 +25,12 @@ export default function Home() {
                 onPress={() => router.push('/sobre')}>
                 <Text style={styles.buttonText}>Ir para sobre</Text>
             </TouchableOpacity>
+
+            <Button title="Salvar" onPress={handlePress} />
+            <Button title="Cancelar" onPress={() => router.back()} />
+            <Button title="Confirmar" onPress={handlePress} color="#34c759" />
+
+            <Card />
         </View>
     );
 }
@@ -27,6 +42,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 16,
         backgroundColor: '#919191ff',
+        gap: 4,
     },
     title: {
         fontSize: 24,
@@ -43,12 +59,13 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: '#4a4138ff',
         paddingVertical: 16,
-        paddingHorizontal: 50,
+        paddingHorizontal: 30,
         borderRadius: 12,
     },
     buttonText: {
         color: '#fff',
         fontSize: 16,
         fontWeight: 600,
+        textAlign: "center",
     },
 })

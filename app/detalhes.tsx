@@ -1,5 +1,6 @@
 import { useRouter } from "expo-router";
-import { Image, StyleSheet, Text, TouchableOpacity, View, ScrollView } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
 
 export default function Detalhes() {
     const router = useRouter();
@@ -18,8 +19,12 @@ export default function Detalhes() {
                         Voltar
                     </Text>
                 </TouchableOpacity>
+
+
+
             </View>
         </ScrollView>
+
     );
 }
 
@@ -57,7 +62,7 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: '#4a4138ff',
         paddingVertical: 16,
-        paddingHorizontal: 50,
+        paddingHorizontal: 30,
         borderRadius: 12,
     },
     buttonText: {
